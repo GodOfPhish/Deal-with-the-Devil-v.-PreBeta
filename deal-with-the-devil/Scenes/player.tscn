@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2pugncoyck7t"]
+
+[ext_resource type="Script" uid="uid://c1wgsb6oqltiw" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://ddco5vi8ajdvj" path="res://Sprites/helplessoul.png" id="2_cvnsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 56
+script = ExtResource("1_cvnsp")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cvnsp")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.5
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 2.5

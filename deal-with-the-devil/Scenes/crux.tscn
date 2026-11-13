@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtdob8p7pv6cs"]
+
+[ext_resource type="Script" uid="uid://i02yqx40dowk" path="res://Scripts/crux.gd" id="1_f2kyx"]
+[ext_resource type="Texture2D" uid="uid://bj3wfh4lhnlqc" path="res://Sprites/Crux.png" id="2_f2kyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y17l5"]
+size = Vector2(14, 14)
+
+[node name="Crux" type="Area2D"]
+collision_layer = 2
+collision_mask = 44
+script = ExtResource("1_f2kyx")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y17l5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_f2kyx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

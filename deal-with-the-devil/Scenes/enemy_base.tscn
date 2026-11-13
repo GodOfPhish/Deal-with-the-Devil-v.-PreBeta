@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vaiebta43vp"]
+
+[ext_resource type="Script" uid="uid://c25v4iocy310t" path="res://Scripts/enemy_base.gd" id="1_cs1oe"]
+[ext_resource type="Texture2D" uid="uid://bqey6ctqyyohp" path="res://Sprites/hurtfulsoul.png" id="2_cs1oe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs1oe"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd0l4"]
+size = Vector2(16, 16)
+
+[node name="EnemyBase" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 38
+script = ExtResource("1_cs1oe")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cs1oe")
+
+[node name="Hitbox&Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Hitbox&Hurtbox"]
+shape = SubResource("RectangleShape2D_jd0l4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_cs1oe")
